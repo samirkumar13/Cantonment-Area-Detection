@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Cantonment Area Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Satellite's</h2>
+
+      <!-- satellites block (server highlights selected_sat if provided) -->
+      <div class="sidebar-section satellites">
+        <a href="{{ url_for('satellite', sat='Sentinel') }}" class="satellite {% if selected_sat=='Sentinel' %}selected{% endif %}">Sentinel</a>
+        <a href="{{ url_for('satellite', sat='Cartosat') }}" class="satellite {% if selected_sat=='Cartosat' %}selected{% endif %}">Cartosat</a>
+        <a href="{{ url_for('satellite', sat='C2D') }}" class="satellite {% if selected_sat=='C2D' %}selected{% endif %}">C2D</a>
+        <a href="{{ url_for('satellite', sat='Google Earth Pro') }}" class="satellite {% if selected_sat=='Google Earth Pro' %}selected{% endif %}">Google Earth Pro</a>
+      </div>
+
+      <!-- visual separator for modern feel -->
+      <div class="sidebar-divider"></div>
+
+      <h2>Detection</h2>
+      <div class="detection-header">
+        <strong>Total: <span id="totalCount">0</span></strong>
+      </div>
+      <ul class="class-list" id="detectionList">
+        <li style="opacity:0.7">Upload image and click Detect...</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 class="title">Cantonment Area Detection</h1>
+
+      <div class="action-buttons">
+        <button id="uploadBtn">Upload Image</button>
+        <!-- hidden until upload -->
+        <button id="detectBtn" style="display:none">Detect</button>
+      </div>
+
+      <div class="boxes" id="boxesContainer" style="display:none">
+        <!-- Preview only shown immediately after upload -->
+        <div class="box" id="previewBox">
+          <h2>Preview</h2>
+          <div class="image-container">
+            <img id="previewImg" src="" alt="Preview" />
+          </div>
+        </div>
+
+        <!-- Result hidden until detection completes -->
+        <div class="box" id="resultBox" style="display:none">
+          <h2>Result</h2>
+          <div class="image-container">
+            <p id="processingText" class="processing-text" style="display:none">Processing…</p>
+            <img id="resultImg" src="" alt="Result" />
+          </div>
+          <a id="downloadLink" href="#" download style="display:none">Download</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- hidden file input -->
+  <input type="file" id="fileInput" accept="image/*" style="display:none" />
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

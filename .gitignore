@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Distribution / Build
+dist/
+build/
+*.spec
+
+# Large Assets (GitHub Limits)
+*.exe
+
+# Privacy (Exclude functionality model from public repo)
+best.pt
+
+# IDE
+.vscode/
+.idea/
