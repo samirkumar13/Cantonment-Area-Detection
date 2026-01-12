@@ -61,9 +61,6 @@ Double-click to run! No installation required.
     ```
     Open your browser to `http://127.0.0.1:5000`.
 
-## 📸 Screenshots
-
-*(Add your screenshots here)*
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
