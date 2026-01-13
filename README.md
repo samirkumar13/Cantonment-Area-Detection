@@ -6,6 +6,7 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 
 An advanced AI-powered application designed to detect and analyze features within Cantonment areas using satellite imagery. This project leverages **YOLOv8** for state-of-the-art object detection and **Flask** for a responsive web interface.
+> 🔴 **[Live Demo](https://cantonment-detection.onrender.com/)**
 
 ## ✨ Features
 
@@ -75,4 +76,4 @@ Here are sample detections from the system:
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
-*Built by [Samir Kumar](https://github.com/samirkumar13)*
+*Built by [Samir Kumar](https://github.com/samirkumar13) and [Sanket](https://github.com/Sanket24-2004)*
